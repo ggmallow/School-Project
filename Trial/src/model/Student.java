@@ -2,6 +2,7 @@
 package model;
 
 
+
 /**
  *
  * @author jacobdyke
@@ -20,7 +21,7 @@ public class Student {
 //     ///could set default value for student here
      }
    
-      public Student(String studentID, String firstName, String lastName, String email, int age/* , double[] grades*/) {
+      public Student(String studentID, String firstName, String lastName, String email, int age, double[] grades) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.studentID = studentID;
