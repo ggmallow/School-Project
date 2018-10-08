@@ -9,15 +9,15 @@ public class Roster {
         static String invalid = " ";
 //        static ArrayList<Student> basicArray = new ArrayList<>();
         static ArrayList<String> invalidEmail = new ArrayList<>();
-       // static int[] grades1;
-
+        static double totalGrades;
+        
     public static void main(String[] args) {
         ArrayList<Student> basicArray = new ArrayList<>();
-        basicArray.add(new Student("1", "Jake", "Dyke", "jdyke 2@wgu.edu", 31, new double[]{100.0, 100.0, 100.0}));
-        basicArray.add(new Student("2", "Joe", "F", "joef@apple..com", 28, new double[]{80.0, 10.0, 0.0}));
-        basicArray.add(new Student("3", "Frank", "Rizzo", "frankrizzo@rizzo.com", 21, new double[]{100.0, 100.0, 100.0}));
-        basicArray.add(new Student("4", "Hello", "World", "Hello@apple.com", 18, new double[]{100.0, 100.0, 100.0}));
-        // print_ID("3");
+        basicArray.add(new Student("1", "John", "Smith", "John1989@gmail.com", 31, new double[]{88, 79, 59}));
+        basicArray.add(new Student("2", "Suzan", "Erikson", "Erickson_1990@gmailcom", 19, new double[]{91, 72, 85}));
+        basicArray.add(new Student("3", "Jack", "Napoli", "The_lawyer99yahoo.com", 19, new double[]{85, 84, 87}));
+        basicArray.add(new Student("4", "Erin", "Black", "Erin.black@comcast.net", 22, new double[]{91, 98, 82}));
+        basicArray.add(new Student("5", "Jake", "Dyke", "jdyke2@wgu.edu", 31, new double[]{100, 100, 100}));
                 
         print_all(basicArray);
         print_ID(invalid, basicArray);
@@ -44,7 +44,7 @@ public class Roster {
     
     public static void print_all(List<Student> basicArray) {
         for (Student value : basicArray) {
-        System.out.println("Index: " + " Student ID: " + value.getstudentID() + "|"  + "  Student First Name:  " + value.getfirstName() + "|" + "   Student Last Name:  "  + value.getlastName() + "|" + "   Email:  " + value.getEmail() + "|"
+        System.out.println(" Student ID: " + value.getstudentID() + "|"  + "  Student First Name:  " + value.getfirstName() + "|" + "   Student Last Name:  "  + value.getlastName() + "|" + "   Email:  " + value.getEmail() + "|"
         + " Age: " + value.getage() + "|" + Arrays.toString(value.getGrades()));
         } 
   
@@ -52,23 +52,34 @@ public class Roster {
      
     public static void print_invalid_emails(String invalid, List<Student>basicArray) { 
         for(Student s : basicArray) { 
-            
                 
-            
-                if (s.getEmail().contains(invalid) || s.getEmail().contains("..")) {  
+               
+                if (!s.getEmail().contains(".") && !s.getEmail().contains(invalid) && !s.getEmail().contains(invalid)) {  
                 invalidEmail.add(s.getEmail());
-                }
-                
-        }
+                }              
+}
                 if (invalidEmail.size() > 0) {
                 System.out.println("The invalid emails are:  " + invalidEmail);                
-                } else /* if(invalidEmail.isEmpty()) */ {
+                } else {
                 System.out.println("There is no invalid emails currently!");              
             }
         }
-    
+ 
     public static void print_average_grade(String studentID, List<Student>basicArray){
-        System.out.println("Ah man, you want math!");
+        for (Student a : basicArray) {
+            if (a.getstudentID().equals(studentID)) {
+                    double grades = 0;  
+                for (double b : a.getGrades()){
+                    grades = b++;
+                    totalGrades = + grades;
+                 System.out.println("Grade loop " + grades/* / a.getGrades().length*/);
+                }
+                System.out.println("Total grade points " + totalGrades/* / a.getGrades().length*/);
+//                 System.out.println("Student has the grades of " + grades/* / a.getGrades().length*/);
+        }
+        }
+        
+       
         
         // for (Student student : basicArray) {
         //      if (student.studentID.equals(studentID)) {
